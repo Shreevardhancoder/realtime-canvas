@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow: hidden;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#toolbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 20px;
+  background: #2d2d2d;
+  border-bottom: 2px solid #3d3d3d;
+  flex-wrap: wrap;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #4a9eff;
+}
+
+label {
+  font-size: 14px;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.tool-btn, .action-btn {
+  padding: 8px 16px;
+  border: 1px solid #555;
+  background: #3d3d3d;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.tool-btn:hover, .action-btn:hover {
+  background: #4d4d4d;
+  border-color: #4a9eff;
+}
+
+.tool-btn.active {
+  background: #4a9eff;
+  border-color: #4a9eff;
+  color: #fff;
+}
+
+#colorPicker {
+  width: 50px;
+  height: 35px;
+  border: 2px solid #555;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+}
+
+#strokeWidth {
+  width: 100px;
+}
+
+#strokeWidthValue {
+  min-width: 25px;
+  text-align: center;
+  font-weight: 600;
+  color: #4a9eff;
+}
+
+.users-section {
+  margin-left: auto;
+}
+
+#usersList {
+  display: flex;
+  gap: 8px;
+}
+
+.user-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #3d3d3d;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.user-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+#canvasContainer {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+#drawingCanvas, #cursorCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: crosshair;
+}
+
+#cursorCanvas {
+  pointer-events: none;
+}
+
+#statusBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+  background: #2d2d2d;
+  border-top: 2px solid #3d3d3d;
+  font-size: 13px;
+  color: #ccc;
+}
+
+#connectionStatus.connected {
+  color: #4ade80;
+}
+
+#connectionStatus.disconnected {
+  color: #f87171;
+}

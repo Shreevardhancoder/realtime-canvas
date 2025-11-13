@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collaborative Drawing Canvas</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="toolbar">
+        <div class="toolbar-section">
+          <h1 class="app-title">Collaborative Canvas</h1>
+        </div>
+
+        <div class="toolbar-section">
+          <label>Tool:</label>
+          <button id="brushTool" class="tool-btn active">Brush</button>
+          <button id="eraserTool" class="tool-btn">Eraser</button>
+        </div>
+
+        <div class="toolbar-section">
+          <label>Color:</label>
+          <input type="color" id="colorPicker" value="#000000">
+        </div>
+
+        <div class="toolbar-section">
+          <label>Stroke Width:</label>
+          <input type="range" id="strokeWidth" min="1" max="50" value="2">
+          <span id="strokeWidthValue">2</span>
+        </div>
+
+        <div class="toolbar-section">
+          <button id="undoBtn" class="action-btn">Undo</button>
+          <button id="redoBtn" class="action-btn">Redo</button>
+          <button id="clearBtn" class="action-btn">Clear</button>
+        </div>
+
+        <div class="toolbar-section users-section">
+          <label>Online Users:</label>
+          <div id="usersList"></div>
+        </div>
+      </div>
+
+      <div id="canvasContainer">
+        <canvas id="drawingCanvas"></canvas>
+        <canvas id="cursorCanvas"></canvas>
+      </div>
+
+      <div id="statusBar">
+        <span id="connectionStatus">Connecting...</span>
+        <span id="roomInfo"></span>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
